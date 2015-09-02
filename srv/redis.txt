@@ -1,0 +1,57 @@
+
+
+The following keys are defined
+
+email:address   {string} email-to-username link
+user:username   {hash}   generic info for given user
+trip:username   {hash}   info for the current trip of the user
+
+userloc:XXXXX    {set}   all active usernames by location
+ camloc:XXXXXXX  {set}   all cameras by location
+  
+
+rank_bounty     {zlist}
+rank_all        {zlist}
+rank_terrorist  {zlist}
+rank_bigbrother {zlist}
+
+rank_bounty           {zlist}
+rank_month_all        {zlist}
+rank_month_terrorist  {zlist}
+rank_month_bigbrother {zlist}
+
+  the camlocs are strings in the form: 
+     username:camnum:latxlon:direction
+
+  the userlocs are strings in the form :
+     username
+  with the key a 5-char geohash (4.8km radius):
+
+
+the userhash contains the keys
+  name
+  pass-hash
+  pass-seed
+  email
+  created
+  [avg-loc]
+  [avg-loc-count]
+
+  [cam1]
+  [cam2]
+  [cam3]
+  [cam4]
+  [cam5]
+
+
+trip:username
+  created
+  loc
+  loc1
+  loc2
+  points
+  point-count
+  
+When spotted
+  spotted_since
+  

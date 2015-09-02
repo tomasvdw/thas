@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>THAS - admin - simulate</title>
+		<style>
+
+			html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      
+			#left-top { position:absolute; width:30%; height:70%; overflow: auto;}
+			#left-bottom { position:absolute; width:30%; height:30%; top:70%;overflow: auto;}
+			
+			#right { position:absolute; left: 30%; width: 70%; height: 100%;}
+
+			form { margin: 1em; border: thin; }
+
+			label { display:block; float:left; width: 120px; } 
+		
+		</style>
+
+		<script type="text/javascript"
+			src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDdwOuSYp7IBicWulGs9IygdZCNGKmS_5Q&sensor=false"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+		<script type="text/javascript" src="simulate.js"></script>
+	</head>
+	<body>
+		<div id="left-top">
+			<form id="login" 
+					action="http://linx.bliin.com/thas/user"
+					method="POST"
+					target="left-bottom">
+				<p><label>name</label><input name="name"></p>
+				<p><label>email</label><input name="email"></p>
+				<p><label>password</label><input name="password"></p>
+				<input name="key" type="hidden" value="constantinopel12">
+				<input type="submit">
+			</form>
+
+		</div>
+		<iframe id="left-bottom">
+		</iframe>
+		<div id="right">
+		</div>
+	</body>
+</html>
+

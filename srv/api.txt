@@ -1,0 +1,46 @@
+
+
+
+POST /signup   
+  name
+  email
+  password
+  key
+
+POST /get-user
+  name
+  [password]  => if supplied, will include cam-info
+
+
+POST /stop-trip
+  name
+  password
+
+@dispatcher.match('/signup', 'POST')
+def POST_signup(request):
+   return _process(User.signup, request)
+
+
+POST /point
+  loc
+  user
+  password
+  [cam-num]       => if supplied, will place cam
+  [cam-direction] => if supplied, will place cam
+
+  - HGETALL user
+  - check user/pass
+  - HGETALL trip
+  - if locked => return locked_for
+  - if (check_cams(user, loc1, loc2))
+       pipe
+         remove cams
+         remove user
+         remove trip
+         add feed
+         add feed:user
+       return locked_for
+  - HSETALL trip
+       return active_percent
+
+
